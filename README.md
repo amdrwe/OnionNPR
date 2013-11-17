@@ -9,4 +9,4 @@ Game runs in CLI, menus are programmed very poorly so they will break if you do 
 
 Parsing the Onion headlines is done the way it is because the Onion's RSS feed does not have any content.
 
-Unfortunately, I don't have a good way to remove sports news or the "American Voices" articles from the Onion side of things. I think I can do it but it'll take a little more work on my end.
+Unfortunately, I don't have a good way to remove sports news or the "American Voices" articles from the Onion side of things, which are very easy and very difficult to guess, respectively. I think I can do it but it'll take a little more work on my end. At the present time, however, it looks like it evens out mostly.
