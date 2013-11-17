@@ -8,7 +8,7 @@ import java.util.regex.*;
 
 /**
  *
- * @author andy
+ * @author Amdrwe
  */
 public class ScrapedPageOnion {
 
