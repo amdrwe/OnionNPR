@@ -47,7 +47,6 @@ public class OnionNPR {
     private void playGame() {
 
         boolean isOnion;
-        int s = 0;
         int randint = r.nextInt(100);
         if (randint < 50) {
             isOnion = true;
@@ -57,7 +56,7 @@ public class OnionNPR {
             npr.printRandomTitle();
         }
         System.out.print(">");
-        s = input.nextInt();
+        int s = input.nextInt();
         switch (s) {
             case 1:
                 if (isOnion) {
