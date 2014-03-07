@@ -12,6 +12,8 @@ public class OnionNPR {
 
     int streak = 0;
     int bestStreak = 0;
+    int numberCorrect = 0;
+    int numberPlayed = 0;
     Scanner input = new Scanner(System.in);
     Random r = new Random();
     ScrapedPageOnion theOnion = new ScrapedPageOnion(new URL("http://theonion.com/"));
@@ -28,7 +30,7 @@ public class OnionNPR {
         selection = input.nextInt();
         switch (selection) {
             case 1:
-                System.out.print("Choices are:\n1. The Onion\n2. NPR\n3. Quit\n");
+                System.out.print("Choices are:\n1. The Onion\n2. NPR\n3. Quit\n\n");
                 this.playGame();
                 break;
             case 2:
@@ -46,6 +48,10 @@ public class OnionNPR {
         System.out.println("1. Play");
         System.out.println("2. Quit");
         System.out.print(">");
+    }
+    
+    private double calcPercentRight() {
+        return (100.0 * ((double)numberCorrect / (double)numberPlayed)); 
     }
 
     private void playGame() {
@@ -65,6 +71,8 @@ public class OnionNPR {
             case 1:
                 if (isOnion) {
                     System.out.println("Correct");
+                    numberPlayed++;
+                    numberCorrect++;
                     streak++;
                     System.out.format("Current Streak: %d\n\n", streak);
                     if (streak > bestStreak) {
@@ -72,6 +80,7 @@ public class OnionNPR {
                     }
                 } else {
                     System.out.println("Wrong");
+                    numberPlayed++;
                     System.out.format("Streak ended at: %d\n\n", streak);
                     streak = 0;
 
@@ -81,6 +90,8 @@ public class OnionNPR {
             case 2:
                 if (!isOnion) {
                     System.out.println("Correct");
+                    numberPlayed++;
+                    numberCorrect++;
                     streak++;
                     System.out.format("Current Streak: %d\n\n", streak);
                     if (streak > bestStreak) {
@@ -88,6 +99,7 @@ public class OnionNPR {
                     }
                 } else {
                     System.out.println("Wrong");
+                    numberPlayed++;
                     System.out.format("Streak ended at: %d\n\n", streak);
                     streak = 0;
                 }
@@ -96,6 +108,7 @@ public class OnionNPR {
             case 3:
                 System.out.println("Thanks for playing!");
                 System.out.format("Best streak: %d\n", bestStreak);
+                System.out.format("You were correct %.2f%% of the time.\n", this.calcPercentRight());
                 break;
             default:
                 System.out.println("Invalid selection");
