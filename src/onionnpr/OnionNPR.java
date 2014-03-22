@@ -49,9 +49,9 @@ public class OnionNPR {
         System.out.println("2. Quit");
         System.out.print(">");
     }
-    
+
     private double calcPercentRight() {
-        return (100.0 * ((double)numberCorrect / (double)numberPlayed)); 
+        return (100.0 * ((double) numberCorrect / (double) numberPlayed));
     }
 
     private void playGame() {
